@@ -8,4 +8,9 @@ class ExampleController extends Controller
     {
         return response()->json(['name' => 'Abigail', 'state' => 'CA']);
     }
+
+    public function frontend()
+    {
+        return view('frontend', ['name' => 'James']);
+    }
 }

@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/example', 'ExampleController@index');
+Route::get('/examplefrontend', 'ExampleController@frontend');
