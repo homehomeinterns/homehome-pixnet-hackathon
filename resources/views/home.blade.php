@@ -16,6 +16,12 @@
 
                     You are logged in!
                 </div>
+                <div class="panel-body">
+                    <button class="alert alert-info" id="add_schedule">新增行程</button>
+                </div>
+                <div id="schedule_list">
+
+                </div>
             </div>
         </div>
     </div>
