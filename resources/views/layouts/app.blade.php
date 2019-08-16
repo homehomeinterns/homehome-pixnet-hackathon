@@ -76,5 +76,53 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: '/schedule_table',
+            type: 'GET',
+            success: function(response) {
+                var content = '';
+                $.each( response, function( key, value ) {
+                    content += '<button class="alert alert-success delete_schedule" data-id="' + value['id'] + '"><p>' + value['name'] + '</p><p>' + value['start_date'] + '</p><p>' + value['end_date'] + '</p></button>';
+                });
+                $('#schedule_list').html(content);
+            }
+        });
+        $('#add_schedule').click(function(){
+            var name = '123';
+            var start_date = '2019-08-01';
+            var end_date = '2019-08-03';
+            $.ajax({
+                url: '/schedule_table',
+                type: 'POST',
+                data: {
+                    'name': name,
+                    'start_date': start_date,
+                    'end_date': end_date
+                },
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
+        $('#schedule_list').on('click', '.delete_schedule',function(){
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/schedule_table/' + id,
+                type: 'DELETE',
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

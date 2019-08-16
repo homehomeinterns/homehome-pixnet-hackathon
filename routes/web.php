@@ -21,3 +21,7 @@ Route::get('/examplefrontend', 'ExampleController@frontend');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/schedule_table', 'ScheduleController@showSchedule');
+Route::post('/schedule_table', 'ScheduleController@addSchedule');
+Route::put('/schedule_table/{id}', 'ScheduleController@editSchedule');
+Route::delete('/schedule_table/{id}', 'ScheduleController@deleteSchedule');
