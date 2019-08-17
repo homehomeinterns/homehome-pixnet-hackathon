@@ -13,3 +13,4 @@
 
 Route::get('/ques', 'GameController@ques');
 Route::get('/spot/{spot}', 'GameController@spot');
+Route::get('/test', 'GameController@test');
