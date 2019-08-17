@@ -33,5 +33,4 @@ Route::put('/schedule_table/card/{id}', 'ScheduleController@editScheduleCard');
 Route::delete('/schedule_table/card/{id}', 'ScheduleController@deleteScheduleCard');
 
 Route::get('/ques', 'GameController@ques');
-Route::get('/spot/{spot}', 'GameController@spot');
-Route::get('/test', 'GameController@test');
+Route::get('/spot/{answer}', 'GameController@spot');
