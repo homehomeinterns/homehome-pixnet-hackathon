@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Schedules_cards_mapping extends Model
+class Schedule_card_mapping extends Model
 {
     protected $fillable = [
         'schedule_id', 'card_id'

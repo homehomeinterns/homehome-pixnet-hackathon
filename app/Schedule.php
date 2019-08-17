@@ -17,6 +17,6 @@ class Schedule extends Model
 
     public function schedule_card_mapping()
     {
-        return $this->hasMany(Schedules_cards_mapping::class, 'id');
+        return $this->hasMany(Schedule_card_mapping::class, 'id');
     }
 }
