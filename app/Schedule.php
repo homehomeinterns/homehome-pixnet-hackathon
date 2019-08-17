@@ -17,6 +17,6 @@ class Schedule extends Model
 
     public function cards()
     {
-        return $this->belongsToMany(Card::class);
+        return $this->belongsToMany(Card::class)->withPivot('start_time', 'end_time');
     }
 }
