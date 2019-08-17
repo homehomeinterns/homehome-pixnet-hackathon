@@ -20,7 +20,11 @@
                     <button class="alert alert-info" id="add_schedule">新增行程</button>
                 </div>
                 <div id="schedule_list">
-
+                </div>
+                <div class="panel-body">
+                    <button class="alert alert-info" id="add_schedule_card">新增行程卡片</button>
+                </div>
+                <div id="schedule_card_list">
                 </div>
             </div>
         </div>

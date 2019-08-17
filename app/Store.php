@@ -14,12 +14,12 @@ class Store extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
     }
 
-    public function schedule_cards()
+    public function cards()
     {
-        return $this->hasMany(Schedule_card::class, 'card_id');
+        return $this->hasMany(Card::class);
     }
 
     protected function setKeysForSaveQuery(Builder $query)

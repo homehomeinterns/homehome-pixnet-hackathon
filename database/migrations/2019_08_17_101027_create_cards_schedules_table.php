@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScheduleCardMappingsTable extends Migration
+class CreateCardsSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateScheduleCardMappingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('schedule_card_mappings', function (Blueprint $table) {
+        Schema::create('card_schedule', function (Blueprint $table) {
             $table->integer('schedule_id')->unsigned()->index();
             $table->integer('card_id')->unsigned()->index();
             $table->foreign('schedule_id')
                   ->references('id')->on('schedules')
                   ->onDelete('cascade');
             $table->foreign('card_id')
-                  ->references('id')->on('schedule_cards')
+                  ->references('id')->on('cards')
                   ->onDelete('cascade');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
@@ -36,6 +36,6 @@ class CreateScheduleCardMappingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedule_card_mappings');
+        Schema::dropIfExists('card_schedule');
     }
 }
