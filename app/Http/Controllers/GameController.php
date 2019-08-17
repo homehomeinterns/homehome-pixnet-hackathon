@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class GameController extends Controller
 {
-    public function question()
+    public function ques()
     {
 	$question = array (
 		array (
@@ -87,11 +87,10 @@ class GameController extends Controller
 		}
 	});
 	return urldecode(json_encode($question));
-        //return response()->json(['name' => 'Abigail', 'state' => 'CA']);
     }
 
-    public function frontend()
+    public function spot($result)
     {
-        return view('frontend', ['name' => 'James']);
+		
     }
 }
