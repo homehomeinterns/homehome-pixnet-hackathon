@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Schedule_card extends Model
+class Card extends Model
 {
     protected $fillable = [
         'title', 'describe', 'article_url', 'article_content', 'image_url', 'owner_id'
@@ -12,11 +12,11 @@ class Schedule_card extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'owner_id');
+        return $this->belongsTo(User::class, 'id', 'owner_id');
     }
 
-    public function schedule_card_mapping()
+    public function schedules()
     {
-        return $this->hasMany(Schedule_card_mapping::class, 'id');
+        return $this->belongsToMany(Schedule::class);
     }
 }
