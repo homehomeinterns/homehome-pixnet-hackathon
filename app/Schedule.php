@@ -10,13 +10,13 @@ class Schedule extends Model
         'name', 'start_date', 'end_date', 'owner_id'
     ];
 
-    public function user()
+    public function owner()
     {
         return $this->belongsTo(User::class, 'owner_id');
     }
 
-    public function schedule_card_mapping()
+    public function cards()
     {
-        return $this->hasMany(Schedule_card_mapping::class, 'id');
+        return $this->belongsToMany(Card::class);
     }
 }

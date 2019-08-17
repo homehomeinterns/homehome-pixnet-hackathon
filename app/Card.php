@@ -10,9 +10,9 @@ class Card extends Model
         'title', 'describe', 'article_url', 'article_content', 'image_url', 'owner_id'
     ];
 
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo(User::class, 'id', 'owner_id');
+        return $this->belongsTo(User::class, 'owner_id');
     }
 
     public function schedules()
