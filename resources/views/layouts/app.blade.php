@@ -122,6 +122,48 @@
                 }
             });
         });
+        $.ajax({
+            url: '/schedule_table/card',
+            type: 'GET',
+            success: function(response) {
+                var content = '';
+                $.each( response, function( key, value ) {
+                    content += '<button class="alert alert-success delete_schedule_card" data-id="' + value['id'] + '"><p>' + value['title'] + '</p><p>' + value['describe'] + '</p><p>' + value['article_url'] + '</p><p>' + value['article_content'] + '</p><p>' + value['image_url'] + '</p></button>';
+                });
+                $('#schedule_card_list').html(content);
+            }
+        });
+        $('#add_schedule_card').click(function(){
+            var title = '666';
+            var describe = '777';
+            var article_url = '888';
+            var article_content = '999';
+            var image_url = '000';
+            $.ajax({
+                url: '/schedule_table/card',
+                type: 'POST',
+                data: {
+                    'title': title,
+                    'describe': describe,
+                    'article_url': article_url,
+                    'article_content': article_content,
+                    'image_url': image_url
+                },
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
+        $('#schedule_card_list').on('click', '.delete_schedule_card',function(){
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/schedule_table/card/' + id,
+                type: 'DELETE',
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
     });
     </script>
 </body>
