@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOption extends Migration
+class CreateOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateOption extends Migration
      */
     public function up()
     {
-        Schema::create('option', function (Blueprint $table) {
-                $table->increments('option_id');
-                $table->string('option_content');
-                )};
+        Schema::create('options', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('option_content');
+        });
     }
-
 
     /**
      * Reverse the migrations.
@@ -27,13 +26,6 @@ class CreateOption extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('option');
+        Schema::dropIfExists('options');
     }
 }
-
-
-
-
-
-
-
