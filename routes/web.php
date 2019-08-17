@@ -11,6 +11,27 @@
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/example', 'ExampleController@index');
+Route::get('/examplefrontend', 'ExampleController@frontend');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/schedule_table', 'ScheduleController@showSchedule');
+Route::post('/schedule_table', 'ScheduleController@addSchedule');
+Route::put('/schedule_table/{id}', 'ScheduleController@editSchedule');
+Route::delete('/schedule_table/{id}', 'ScheduleController@deleteSchedule');
+
+Route::get('/schedule_table/card/', 'ScheduleController@showScheduleCard');
+Route::get('/schedule_table/card/{id}', 'ScheduleController@showCardInSchedule');
+Route::post('/schedule_table/card', 'ScheduleController@addScheduleCard');
+Route::put('/schedule_table/card/{id}', 'ScheduleController@editScheduleCard');
+Route::delete('/schedule_table/card/{id}', 'ScheduleController@deleteScheduleCard');
+
 Route::get('/ques', 'GameController@ques');
 Route::get('/spot/{spot}', 'GameController@spot');
 Route::get('/test', 'GameController@test');

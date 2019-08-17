@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spot extends Model
+class Travel_game extends Model
 {
     //
 }

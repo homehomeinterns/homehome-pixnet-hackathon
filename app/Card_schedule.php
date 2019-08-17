@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spot extends Model
+class Card_schedule extends Model
 {
-    //
 }

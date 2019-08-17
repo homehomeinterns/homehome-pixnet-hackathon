@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spot extends Model
+class Option_keyword_mapping extends Model
 {
     //
 }
