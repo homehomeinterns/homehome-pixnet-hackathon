@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpot extends Migration
+class CreateSpotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateSpot extends Migration
      */
     public function up()
     {
-        Schema::create('spot', function (Blueprint $table) {
-                $table->increments('spot_id');
-                $table->string('spot_name');
-                $table->float('start_point');
-                )};
+        Schema::create('spots', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('spot_name');
+            $table->float('start_point');
+        });
     }
 
     /**
@@ -27,6 +27,6 @@ class CreateSpot extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spot');
+        Schema::dropIfExists('spots');
     }
 }
