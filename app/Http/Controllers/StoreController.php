@@ -46,7 +46,7 @@ class StoreController extends Controller
     public function deleteStoreCard($card_id)
     {
         try {
-            $store = Store::findOrFail($card_id);
+            $store = Store::where('card_id', $card_id)->firstOrFail();
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return response()->json(['error' => true, 'message' => '該收藏卡片不存在']);
         }
