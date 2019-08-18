@@ -9,4 +9,5 @@ class Keyword_spot_mapping extends Model
     protected $fillable = [
 	'keyword_id', 'spot_id'
     ];
+
 }
