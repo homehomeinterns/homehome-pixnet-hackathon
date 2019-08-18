@@ -35,3 +35,5 @@ Route::delete('/schedule_table/card/{id}', 'ScheduleController@deleteScheduleCar
 Route::get('/store_card', 'StoreController@showStoreCard');
 Route::post('/store_card', 'StoreController@addStoreCard');
 Route::delete('/store_card/{id}', 'StoreController@deleteStoreCard');
+
+Route::get('/example_game', 'ExampleController@showOptionSpots');
