@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeywordSpotMappingsTable extends Migration
+class CreateKeywordsSpotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKeywordSpotMappingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('keyword_spot_mappings', function (Blueprint $table) {
+        Schema::create('keyword_spot', function (Blueprint $table) {
             $table->integer('keyword_id')->unsigned()->index();
             $table->integer('spot_id')->unsigned()->index();
             $table->foreign('keyword_id')
@@ -33,6 +33,6 @@ class CreateKeywordSpotMappingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keyword_spot_mappings');
+        Schema::dropIfExists('keyword_spot');
     }
 }
