@@ -26,7 +26,7 @@ class StoreController extends Controller
         return response()->json($card);
     }
 
-    public function addStore(Request $request)
+    public function addStoreCard(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'card_id' => 'required',
@@ -45,7 +45,7 @@ class StoreController extends Controller
         return response()->json(['error' => false, 'data' => $result]);
     }
 
-    public function deleteStore($card_id)
+    public function deleteStoreCard($card_id)
     {
         try {
             $store = Store::findOrFail($card_id);
