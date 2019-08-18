@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
@@ -17,9 +17,9 @@ class Store extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function cards()
+    public function card()
     {
-        return $this->hasMany(Card::class);
+        return $this->belongsTo(Card::class);
     }
 
     protected function setKeysForSaveQuery(Builder $query)

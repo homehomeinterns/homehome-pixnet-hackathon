@@ -170,7 +170,7 @@
             success: function(response) {
                 var content = '';
                 $.each( response, function( key, value ) {
-                    content += '<button class="alert alert-success delete_store_card" data-id="' + value['id'] + '"><p>' + value['title'] + '</p><p>' + value['describe'] + '</p><p>' + value['article_url'] + '</p><p>' + value['article_content'] + '</p><p>' + value['image_url'] + value['owner_id']'</p></button>';
+                    content += '<button class="alert alert-success delete_store_card" data-id="' + value['id'] + '"><p>' + value['title'] + '</p><p>' + value['describe'] + '</p><p>' + value['article_url'] + '</p><p>' + value['article_content'] + '</p><p>' + value['image_url'] + value['owner_id'] + '</p></button>';
                 });
                 $('#store_card_list').html(content);
             }
