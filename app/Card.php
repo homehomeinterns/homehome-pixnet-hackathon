@@ -19,4 +19,9 @@ class Card extends Model
     {
         return $this->belongsToMany(Schedule::class)->withPivot('start_time', 'end_time');
     }
+
+    public function stores()
+    {
+        return $this->hasMany(Store::class);
+    }
 }
