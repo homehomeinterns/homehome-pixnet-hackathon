@@ -164,6 +164,40 @@
                 }
             });
         });
+        $.ajax({
+            url: '/store_card',
+            type: 'GET',
+            success: function(response) {
+                var content = '';
+                $.each( response, function( key, value ) {
+                    content += '<button class="alert alert-success delete_schedule_card" data-id="' + value['id'] + '"><p>' + value['title'] + '</p><p>' + value['describe'] + '</p><p>' + value['article_url'] + '</p><p>' + value['article_content'] + '</p><p>' + value['image_url'] + value['owner_id']'</p></button>';
+                });
+                $('#store_card_list').html(content);
+            }
+        });
+        $('#add_store_card').click(function(){
+            var card_id = '1';
+            $.ajax({
+                url: '/store_card',
+                type: 'POST',
+                data: {
+                    'card_id': card_id,
+                },
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
+        $('#store_card_list').on('click', '.delete_store_card',function(){
+            var id = $(this).data('id');
+            $.ajax({
+                url: '/store_card/' + id,
+                type: 'DELETE',
+                success: function(response) {
+                    location.reload();
+                }
+            });
+        });
     });
     </script>
 </body>
