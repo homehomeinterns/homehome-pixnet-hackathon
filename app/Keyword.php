@@ -8,11 +8,11 @@ class Keyword extends Model
 {
     public function spots()
     {
-        return $this->belongsToMany(Spot::class)->withPivot('spot_name', 'start_point');
+        return $this->belongsToMany(Spot::class);
     }
 
     public function options()
     {
-        return $this->belongsToMany(Option::class)->withPivot('option_content');
+        return $this->belongsToMany(Option::class);
     }
 }

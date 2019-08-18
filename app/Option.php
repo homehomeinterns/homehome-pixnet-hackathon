@@ -8,6 +8,6 @@ class Option extends Model
 {
     public function keywords()
     {
-        return $this->belongsToMany(Keyword::class)->withPivot('keyword');
+        return $this->belongsToMany(Keyword::class);
     }
 }
