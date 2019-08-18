@@ -30,6 +30,10 @@ class StoreController extends Controller
             return response()->json(['error' => true, 'message' => $validator->errors()]);
         }
 
+        if (Store::where('card_id', $request->input('card_id'))->where('user_id', Auth::id())->exists()) {
+            return response()->json(['error' => true, 'message' => '卡片已經收藏過了'], 400);
+        }
+
         $data = [
             'card_id' => $request->input('card_id'),
             'user_id' => Auth::id()
