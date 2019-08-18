@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionKeywordMappingsTable extends Migration
+class CreateKeywordsOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOptionKeywordMappingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('option_keyword_mappings', function (Blueprint $table) {
+        Schema::create('keyword_option', function (Blueprint $table) {
             $table->integer('option_id')->unsigned()->index();
             $table->integer('keyword_id')->unsigned()->index();
             $table->foreign('option_id')
@@ -33,6 +33,6 @@ class CreateOptionKeywordMappingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('option_keyword_mappings');
+        Schema::dropIfExists('keyword_option');
     }
 }
