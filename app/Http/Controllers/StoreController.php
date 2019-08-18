@@ -13,20 +13,11 @@ class StoreController extends Controller
     public function showStoreCard()
     {
         $store_cards = Store::where('user_id', Auth::id())->get();
-        $cards = DB::table('cards')->get();
-
-
-
         foreach ($store_cards as $store_card)
         {
-            foreach ($cards as $card) {
-                if ($store_card->card_id == $card->id) {
-                    $card_infos[] = $card;
-                }
-            }
-
+            $cards[] = $store_card->card;
         }
-        return response()->json($card_infos);
+        return response()->json($cards);
     }
 
     public function addStoreCard(Request $request)
