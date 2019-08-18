@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use App\Store;
 use App\Card;
 
@@ -12,7 +13,9 @@ class StoreController extends Controller
     public function showStoreCard()
     {
         $store_cards = Store::where('user_id', Auth::id())->get();
-        $cards = Card::where('id', Auth::id())->get();
+        $cards = DB::table('cards')->get();
+
+
 
         foreach ($store_cards as $store_card)
         {
@@ -23,7 +26,7 @@ class StoreController extends Controller
             }
 
         }
-        return response()->json($card);
+        return response()->json($card_infos);
     }
 
     public function addStoreCard(Request $request)
