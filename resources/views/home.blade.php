@@ -26,6 +26,11 @@
                 </div>
                 <div id="schedule_card_list">
                 </div>
+                <div id="store_card_list">
+                </div>
+                <div class="panel-body">
+                    <button class="alert alert-info" id="add_store_card">新增收藏卡片</button>
+                </div>
             </div>
         </div>
     </div>
