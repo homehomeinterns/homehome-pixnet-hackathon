@@ -31,3 +31,7 @@ Route::get('/schedule_table/card/{id}', 'ScheduleController@showCardInSchedule')
 Route::post('/schedule_table/card', 'ScheduleController@addScheduleCard');
 Route::put('/schedule_table/card/{id}', 'ScheduleController@editScheduleCard');
 Route::delete('/schedule_table/card/{id}', 'ScheduleController@deleteScheduleCard');
+
+Route::get('/store_card', 'StoreController@showStoreCard');
+Route::post('/store_card', 'StoreController@addStoreCard');
+Route::delete('/store_card/{id}', 'StoreController@deleteStoreCard');
