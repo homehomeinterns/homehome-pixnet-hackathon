@@ -125,6 +125,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-@import '../assests/scss/index.css';
+<style lang="scss">
+@import '../assets/scss/index.scss';
 </style>
