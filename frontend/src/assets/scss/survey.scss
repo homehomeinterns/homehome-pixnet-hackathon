@@ -13,15 +13,15 @@ label input[type="radio"]:checked ~ i.fa.fa-circle-o{
     display: none;
 }
 label input[type="radio"]:checked ~ i.fa.fa-dot-circle-o{
-    color: #7AA3CC;    
+    color: black;    
     display: inline;
 }
 label:hover input[type="radio"] ~ i.fa {
-color: #7AA3CC;
+color: black;
 }
 
 div[data-toggle="buttons"] label.active{
-    color: #7AA3CC;
+    color: black;
 }
 
 div[data-toggle="buttons"] label {

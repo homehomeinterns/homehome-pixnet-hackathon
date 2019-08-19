@@ -1,0 +1,50 @@
+<template>
+<div class="container">
+    <div class="row">
+        <div :key="article" v-for="(article, index) in articles" class="col-md-3">
+          <div class="square-service-block">
+            <a :href="article">
+              <h2 class="ssb-title">{{ index }}</h2>  
+            </a>
+          </div>
+        </div>
+     </div>
+</div>
+</template>
+
+<script>
+import axios from 'axios';
+export default {
+  name: 'recomend',
+  data (){
+    return{
+      articles: [],
+    }
+  },
+  mounted() {
+      this.question();
+  },
+  methods: {
+    question () {
+      axios({
+        method: 'GET',
+        url: 'https://emma.pixnet.cc/blog/articles/search?key="台北美食"&site_category_id=26&per_page=10'})
+      .then((response) => {
+        console.log(response.data);
+        response.data.articles.forEach(element => {
+            this.articles.push(element.link);
+        });
+        //this.article = test;
+      })
+      .catch(function (err) {
+          console.log(err);
+      })
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss">
+@import '../assets/scss/recomend.scss';
+</style>
