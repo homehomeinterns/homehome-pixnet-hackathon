@@ -11,6 +11,17 @@
         </div>
      </div>
     <h1>推薦行程</h1>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col">夏日玩水嗨翻天</div>
+    </div>
+    <div class="row">
+        <div class="col">夜晚和女神一起看星星</div>
+    </div>
+    <div class="row">
+        <div class="col">半夜不睡覺，在屋頂唱歌</div>
+    </div>
+    </div>
 </div>
 </template>
 
@@ -36,7 +47,6 @@ export default {
         response.data.articles.forEach(element => {
             this.articles.push(element.link);
         });
-        //this.article = test;
       })
       .catch(function (err) {
           console.log(err);
