@@ -26,5 +26,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import '../assests/scss/survey.scss';
+@import '../assets/scss/survey.scss';
 </style>
