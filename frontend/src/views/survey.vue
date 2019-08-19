@@ -1,12 +1,12 @@
 <template>
 <div class="container">
-  <div class="row">
+  <div class="row-survey">
     <div class="col-xs-12">
       <br> Q1
       <br>
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
-        <label class="btn active">
-          <input type="radio" name='gender1' checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  Male</span>
+        <label class="btn">
+          <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  Male</span>
         </label>
         <label class="btn">
           <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Female</span>
@@ -18,9 +18,25 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'survey',
+  data (){
+    return{
+      question: [],
+    }
+  },
+  mounted() {
 
+  },
+  methods: {
+    question () {
+      axios.get()
+      .then(function (response){
+        this.question = response.data;
+      });
+    }
+  }
 }
 </script>
 

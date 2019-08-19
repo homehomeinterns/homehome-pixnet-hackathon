@@ -48,10 +48,14 @@ user-select: none;
 }
 
 div[data-toggle="buttons"] label:hover {
-color: #7AA3CC;
+color: black;
 }
 
 div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
 -webkit-box-shadow: none;
 box-shadow: none;
+}
+
+.row-survey {
+    background-color: #fc5185;
 }
