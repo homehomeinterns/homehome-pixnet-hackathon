@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Travel_game;
 use App\Spot;
 use App\Option;
@@ -99,7 +100,9 @@ class GameController extends Controller
 			$value = urlencode($value);
 		}
 	});
-	return urldecode(json_encode($question));
+	$content = urldecode(json_encode($question));
+	$status = "200";
+	return response($content, $status)->header('Access-Control-Allow-Origin', '*');
     }
 
     public function spot($ans)
@@ -163,6 +166,8 @@ class GameController extends Controller
 			$value = urlencode($value);
 		}
 	});
-	return urldecode(json_encode($result));
+	$content = urldecode(json_encode($result));
+	$status = "200";
+	return response($content, $status)->header('Access-Control-Allow-Origin', '*');
     }
 }
