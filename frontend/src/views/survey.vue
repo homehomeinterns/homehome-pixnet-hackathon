@@ -1,19 +1,18 @@
 <template>
 <div class="container">
-  <div class="row-survey">
+  <div :key="index" v-for="(question, index) in questions" class="row-survey">
     <div class="col-xs-12">
-      <br> Q1
+      <br> Q{{ index+1 }} {{ question.question}}
       <br>
-      <div class="btn-group btn-group-vertical" data-toggle="buttons">
+      
+      <div :key="choice" v-for="choice in question.answer" class="btn-group btn-group-vertical" data-toggle="buttons">
         <label class="btn">
-          <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  Male</span>
-        </label>
-        <label class="btn">
-          <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Female</span>
+          <input type="radio" name='gender1'><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span> {{ choice }}</span>
         </label>
       </div>
     </div>
   </div>
+    <input type="submit" class="btn btn-info" value="Submit Button">
 </div>
 </template>
 
@@ -23,18 +22,24 @@ export default {
   name: 'survey',
   data (){
     return{
-      question: [],
+      questions: [],
     }
   },
   mounted() {
-
+    this.question();
   },
   methods: {
     question () {
-      axios.get()
-      .then(function (response){
-        this.question = response.data;
-      });
+      axios({
+        method: 'GET',
+        url: 'http://35.193.69.171/homehome-pixnet-hackathon/public/index.php/ques'})
+      .then((response) => {
+        console.log(response.data);
+        this.questions = response.data;
+      })
+      .catch(function (err) {
+          console.log(err);
+      })
     }
   }
 }

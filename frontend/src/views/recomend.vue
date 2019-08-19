@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+    <h1>流行文章</h1>
     <div class="row">
         <div :key="article" v-for="(article, index) in articles" class="col-md-3">
           <div class="square-service-block">
@@ -9,6 +10,7 @@
           </div>
         </div>
      </div>
+    <h1>推薦行程</h1>
 </div>
 </template>
 
