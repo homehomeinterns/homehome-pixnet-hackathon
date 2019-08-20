@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel_game extends Model
 {
+    protected $fillable = [
+        'id', 'question_title', 'option_A', 'option_B', 'option_C', 'option_D'
+    ];
     public function option_A()
     {
         return $this->belongsTo(Option::class, 'option_A');
@@ -22,4 +25,5 @@ class Travel_game extends Model
     {
         return $this->belongsTo(Option::class, 'option_D');
     }
+    
 }
