@@ -15,12 +15,29 @@
   </div>
     <input type="submit" class="btn btn-info" value="Submit Button" @click="submitAnswer()">
   </form>
+  
+<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Loading...</h5>
+          <span aria-hidden="true">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle">以下是測試的結果</h5>
+        <button type="button" @click="close()" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -29,8 +46,7 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button @click="close()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -82,8 +98,14 @@ export default {
         console.log('jibai')
     });
     },
+
+    close () {
+      document.getElementById('exampleModalCenter').style.display='none';
+    },
     
     submitAnswer () {
+      document.getElementById('loading').style.display='block';
+      document.getElementById('loading').style.opacity='1';
       var diu = Object.values(this.test)
       for(var i = 0 ; i <diu.length ; i++){
         diu[i] = this.mapping[diu[i]];
@@ -97,6 +119,8 @@ export default {
        .then((response) => {
          console.log(response.data);
          this.results = response.data;
+        document.getElementById('loading').style.display='none';
+        document.getElementById('loading').style.opacity='0';
          document.getElementById('exampleModalCenter').style.display='block';
           document.getElementById('exampleModalCenter').style.opacity='1';
        })
