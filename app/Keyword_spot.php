@@ -10,5 +10,5 @@ class Keyword_spot extends Model
 	    'keyword_id', 'spot_id'
     ];
 
-    protected $table = 'keyword_option';
+    protected $table = 'keyword_spot';
 }
