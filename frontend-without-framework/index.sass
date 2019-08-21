@@ -1,0 +1,177 @@
+$color_lightBlue: #5bd6c8
+$color_darkBlue: #364f6b
+$color_red: #fc5185
+*
+  // border: solid 1px #666
+  transition-duration: 0.3s
+  letter-spacing: 0.5px
+//debug
+.disable
+  display: none
+
+nav.navbar.fixed-top.navbar-light.navbar-expand
+  i
+    color: $color_red
+  span
+    color: $color_red
+    font-family: 'Varela Round'
+    margin-left: 5px
+  a
+    color: $color_darkBlue
+    letter-spacing: 1px
+    #line
+      width: 0px
+      height: 2px
+      background: $color_lightBlue
+
+    &:hover
+      #line
+        width: 100%
+        height: 2px
+        background-color: $color_lightBlue
+
+header.jumbotron
+  text-align: left
+  background-image: url(https://cdn.pixabay.com/photo/2019/04/19/09/46/holiday-4138980_1280.png)
+  background-size: cover
+  background-position: center center
+  background-attachment: fixed
+  margin-bottom: 0px
+  height: 800px
+  .container
+    padding: 200px 0px
+  hr
+    max-width: 50px
+    border: solid 2px $color_red
+  h1
+    letter-spacing: 2px
+    color: $color_darkBlue
+  .line
+    width: 60px
+    height: 5px
+    background-color: $color_red
+    margin-top: 20px
+    margin-bottom: 30px
+  h5
+    color: rgba(black,0.6)
+    letter-spacing: 1px
+
+section
+  padding: 40px 0px
+
+section#section_recommand
+  background-color: $color_lightBlue
+  color: #444
+  .col-sm-5.img
+    background-image: url(https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280.png)
+    height: 300px
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center center
+  .col-sm-7
+    padding-left: 40px
+  h2
+    padding: 20px 0px
+section#section_article
+  padding: 30px 40px
+  color: $color_darkBlue
+  h5
+    margin-top: 10px
+    margin-bottom: 20px
+  #food
+    background-image: url('https://cdn.pixabay.com/photo/2017/06/16/18/35/tarte-2409958_1280.jpg')
+  #hotel
+    background-image: url('https://cdn.pixabay.com/photo/2016/04/15/11/45/hotel-1330841_1280.jpg')
+  #spot
+    background-image: url('https://www.penghu-nsa.gov.tw/FileDownload/Scenery/Big/20160907103937579129421.jpg')
+  #store
+    background-image: url('https://cdn.pixabay.com/photo/2017/04/13/15/19/hands-2227857_1280.jpg')
+  .img_wrap
+    height: 200px
+    margin: 20px 0px
+    overflow: hidden
+    border-radius: 20px
+    background-size: cover
+    &:hover h4
+      opacity: 1
+    &:hover .black
+      opacity: 0.4
+    h4
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      height: 100%
+      opacity: 0
+      color: #fff
+      letter-spacing: 2px
+      background-color: rgba(0, 0, 0, 0.4)
+section#section_test
+  background-color: $color_darkBlue
+  color: #fff
+  padding: 0px
+  .container
+    padding: 30px 20px
+    //padding-top: 30px
+  hr
+    border: solid 1px
+  .col-sm-12.col-md-5
+    background-color: #fff
+    background-image: url(https://cdn.pixabay.com/photo/2017/06/08/17/52/compass-2384365_1280.png)
+    background-repeat: no-repeat
+    height: 400px
+    background-size: 100% auto
+  .col-sm-12.col-md-7
+    text-align: center
+    i
+      font-size: 40px
+      padding: 15px
+    p
+      text-align: left
+  .row.features
+    margin: 30px 0px
+  .btn
+    color: $color_darkBlue
+    letter-spacing: 1px
+    border-radius: 35px
+    &:hover
+      opacity: 0.8
+section#section_like
+  color: #444
+  h2
+    letter-spacing: 2px
+  .col-sm-12
+    padding: 0px 40px
+  img
+    width: 100%
+  i
+    font-size: 30px
+    padding: 20px 10px
+    color: $color_red
+footer.jumbotron
+  color: #444
+  text-align: center
+  background-image: url(https://cdn.pixabay.com/photo/2019/04/19/09/46/holiday-4138980_1280.png)
+  background-size: cover
+  background-position: center center
+  background-attachment: fixed
+  margin-bottom: 0px
+  .container
+    padding: 30px 0px
+  hr
+    max-width: 50px
+    border: solid 2px $color_red
+  .btn
+    letter-spacing: 2px
+    color: $color_red
+    background-color: rgba(255,255,255,0.6)
+    &:hover
+      background-color: #fff
+  input
+    margin-top: 20px
+    background-color: transparent
+    max-width: 500px
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+    border: solid 1px $color_red

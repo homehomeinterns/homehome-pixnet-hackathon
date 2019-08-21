@@ -1,0 +1,89 @@
+nav.navbar.fixed-top.navbar-light.navbar-expand
+  a(href="#top").navbar-brand
+    i.fas.fa-umbrella-beach
+    span Homeinterns
+  .collapse.navbar-collapse#navbarNav
+    ul.navbar-nav.ml-sm-auto
+      li.nav-item.px-2
+        a(href="#section_recommand").nav-link 推薦頁面
+          #line
+      li.nav-item.px-2
+        a(href="#section_article").nav-link 文章頁面
+          #line
+      li.nav-item.px-2
+        a(href="#section_test").nav-link 書籤頁
+          #line
+      li.nav-item.px-2
+        a(href="#section_like").nav-link 旅遊測驗
+          #line
+
+header.jumbotron#top
+  .container
+    h1(data-0="transform: translateY(-40px)" data-500="transform: translateY(100px)") Pixnet Hackthon
+    .line
+    h5 顛覆你的旅遊體驗
+section#section_recommand
+  .container
+    .row.align-items-center
+      .col-sm-5.img(data-0="transform: translateX(-200px)" data-400="transform: translateY(0px)")
+      .col-sm-7(data-300="opacity: 0" data-400="opacity: 1")
+        h2 推薦頁面
+        h5 瀏覽推薦行程、流行趨勢
+        h5 分享行程、旅遊社群
+section#section_article
+  .container
+    .row
+      .col-sm-12(data-bottom-top="transform: translateY(-20px);opacity: 0" data-center="transform: translateY(0px);opacity: 1")
+        h1 我們提供豐富的文章內容
+      .col-lg-3.col-md-6.col-sm-6(data-bottom-top="transform: translateY(-20px);opacity: 0" data-center="transform: translateY(0px);opacity: 1")
+        #food.img_wrap
+          h4 美食
+      .col-lg-3.col-md-6.col-sm-6(data-bottom-top="transform: translateY(-20px);opacity: 0" data-center="transform: translateY(0px);opacity: 1")
+        #hotel.img_wrap
+          h4 住宿
+      .col-lg-3.col-md-6.col-sm-6(data-bottom-top="transform: translateY(-20px);opacity: 0" data-center="transform: translateY(0px);opacity: 1")
+        #spot.img_wrap
+          h4 景點
+      .col-lg-3.col-md-6.col-sm-6(data-bottom-top="transform: translateY(-20px);opacity: 0" data-center="transform: translateY(0px);opacity: 1")
+        #store.img_wrap
+          h4 書籤與收藏
+section#section_test
+  .container-fliud
+    .row.align-items-center
+      .col-sm-12.col-md-5.depress(data-bottom-top="background-size: 150%;background-position: 0% 0%" data-center="background-size: 100%;background-position: 50% 50%")
+      .col-sm-12.col-md-7
+        .container
+          h2 來測測你適合哪種旅行
+          hr
+          .row.features
+            .col-sm-4(data-bottom-top="transform: scale(1.5);opacity: 0" data-center="transform: scale(1);opacity: 1")
+              i.fas.fa-archway
+              h5 名勝古蹟
+            .col-sm-4(data-bottom-top="transform: scale(1.5);opacity: 0" data-center="transform: scale(1);opacity: 1")
+              i.fab.fa-pagelines
+              h5 大自然
+            .col-sm-4(data-bottom-top="transform: scale(1.5);opacity: 0" data-center="transform: scale(1);opacity: 1")
+              i.fas.fa-cocktail
+              h5 美食行程
+          button.btn.btn-default 馬上測一測
+section#section_like
+  .container
+    .row.align-items-center
+      .col-sm-12
+        h2 將喜愛的行程加入收藏吧
+
+      .col-sm-12
+        .sec1(data-bottom-top="transform: translateX(20px);" data-center="transform: translateX(0px);")
+          i.fas.fa-heart
+          h3 收藏的景點
+          p 內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容。
+        .sec2(data-bottom-top="transform: translateX(20px);" data-center="transform: translateX(0px);")
+          i.fas.fa-bookmark
+          h3 加入書籤
+          p 內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容。
+footer.jumbotron
+  .container
+    h2 讓我們一起開始旅程
+    input.form-control(placeholder="Email")
+    hr
+    button.btn.btn-default 聯絡我們

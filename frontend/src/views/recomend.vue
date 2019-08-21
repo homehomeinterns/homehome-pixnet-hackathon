@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div id="recomendContainer" class="container">
     <h1>流行文章</h1>
     <div class="row">
         <div :key="article" v-for="(article, index) in articles" class="col-md-3">

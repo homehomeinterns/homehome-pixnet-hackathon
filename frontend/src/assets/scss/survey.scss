@@ -1,61 +1,166 @@
-
-label.btn span {
-    font-size: 1.5em ;
+* {
+    // border: #aaa 1px solid;
+    position: relative;
+    transition-duration: 0.3s;
+    box-sizing: border-box;
+    z-index: 1;
+}
+#surveyContainer.container {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-label input[type="radio"] ~ i.fa.fa-circle-o{
-    color: #c8c8c8;    display: inline;
+.survey-wrap {
+    height: 450px;
+    width: 80%;
+    min-width: 500px;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
-label input[type="radio"] ~ i.fa.fa-dot-circle-o{
+.survey-wrap .next {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    padding: 10px 30px;
+    z-index: 2;
+    font-size: 30px;
+    cursor: pointer;
+}
+.surveys {
+    height: 100%;
+    width: 100%;
+    transition-duration: 0s;
+}
+
+#loading.survey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.survey {
+    height: 100%;
+    width: 100%;
+    padding: 10px 50px;
+    background-color: #fff;
+}
+.survey .question {
+    margin-top: 40px;
+    text-align: left;
+    height: 100px;
+    & span {
+        font-size: 24px;
+        margin-right: 5px;
+    }
+}
+.survey .option {
+    text-align: left;
+    margin-top: 30px;
+}
+.survey .container {
+    margin-bottom: 20px;
+}
+.survey input[type="radio"] {
     display: none;
 }
-label input[type="radio"]:checked ~ i.fa.fa-circle-o{
-    display: none;
+.survey input[type="radio"]:checked+label {
+    // font-size: 20px;
+    // font-weight: 500;
+    background-color: rgba(44, 62, 80, 0.1);
 }
-label input[type="radio"]:checked ~ i.fa.fa-dot-circle-o{
-    color: black;    
-    display: inline;
+.survey label {
+    width: 100%;
+    border: 1px solid rgba(44, 62, 80, 0.2);
+    color: #2c3e50;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    // & .line {
+    //     width: 0%;
+    //     height: 2px;
+    //     background-color: #5bd6c8;
+    // }
+    &:hover {
+        // & .line {
+        //     width: 100px;
+        // }
+        background-color: rgba(44, 62, 80, 0.1);
+    }
 }
-label:hover input[type="radio"] ~ i.fa {
-color: black;
+.survey .button {
+    display: flex;
+    & input {
+        margin: 0px 10px;
+    }
 }
-
-div[data-toggle="buttons"] label.active{
-    color: black;
-}
-
-div[data-toggle="buttons"] label {
-display: inline-block;
-padding: 6px 12px;
-margin-bottom: 0;
-font-size: 14px;
-font-weight: normal;
-line-height: 2em;
-text-align: left;
-white-space: nowrap;
-vertical-align: top;
-cursor: pointer;
-background-color: none;
-border: 0px solid 
-#c8c8c8;
-border-radius: 3px;
-color: #c8c8c8;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
--o-user-select: none;
-user-select: none;
-}
-
-div[data-toggle="buttons"] label:hover {
-color: black;
+#surveySubmit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & h4 {
+        margin-bottom: 40px;
+    }
 }
 
-div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
--webkit-box-shadow: none;
-box-shadow: none;
+.spinner-border{
+    margin: 50px;
+    margin-bottom: 80px;
+}
+.modal-content {
+    width: 90%;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: 0px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    background-color: #ffdd67;
+}
+.modal-header {
+    border-bottom: 0px;
+    margin: 0px 10px;
+    margin-top: 10px;
+}
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & a {
+        margin-bottom: 20px;
+        color: #2c3e50;
+        text-decoration: none;
+        font-size: 30px;
+        // border: 2px solid rgba(0, 0, 0 ,0.1);
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0 ,0.1);
+        &:hover {
+            background-color: #2c3e50;
+            color: #ffdd67;
+        }
+    }
+}
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0px;
+    padding-top: 0px;
+    & h6 {
+        font-weight: 400;
+    }
 }
 
-.row-survey {
-    background-color: #fc5185;
+img {
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
 }

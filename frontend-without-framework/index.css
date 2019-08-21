@@ -7,9 +7,32 @@
   display: none;
 }
 
+nav.navbar.fixed-top.navbar-light.navbar-expand i {
+  color: #fc5185;
+}
+nav.navbar.fixed-top.navbar-light.navbar-expand span {
+  color: #fc5185;
+  font-family: "Varela Round";
+  margin-left: 5px;
+}
+nav.navbar.fixed-top.navbar-light.navbar-expand a {
+  color: #364f6b;
+  letter-spacing: 1px;
+}
+nav.navbar.fixed-top.navbar-light.navbar-expand a #line {
+  width: 0px;
+  height: 2px;
+  background: #5bd6c8;
+}
+nav.navbar.fixed-top.navbar-light.navbar-expand a:hover #line {
+  width: 100%;
+  height: 2px;
+  background-color: #5bd6c8;
+}
+
 header.jumbotron {
   text-align: left;
-  background-image: url(https://res.cloudinary.com/tzuhsin/image/upload/v1566394662/beach_qheo2v.png);
+  background-image: url(https://cdn.pixabay.com/photo/2019/04/19/09/46/holiday-4138980_1280.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -56,7 +79,6 @@ section#section_recommand .col-sm-5.img {
 }
 section#section_recommand .col-sm-7 {
   padding-left: 40px;
-  text-align: left;
 }
 section#section_recommand h2 {
   padding: 20px 0px;
@@ -123,8 +145,7 @@ section#section_test .col-sm-12.col-md-5 {
   background-image: url(https://cdn.pixabay.com/photo/2017/06/08/17/52/compass-2384365_1280.png);
   background-repeat: no-repeat;
   height: 400px;
-  background-size: contain;
-  background-position: center center;
+  background-size: 100% auto;
 }
 section#section_test .col-sm-12.col-md-7 {
   text-align: center;
@@ -151,14 +172,8 @@ section#section_test .btn:hover {
 section#section_like {
   color: #444;
 }
-section#section_like .sec1, .sec2  {
-  text-align: left;
-}
 section#section_like h2 {
   letter-spacing: 2px;
-}
-section#section_like h3 {
-  display: inline;
 }
 section#section_like .col-sm-12 {
   padding: 0px 40px;
