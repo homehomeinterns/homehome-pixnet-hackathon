@@ -32,6 +32,11 @@ Route::post('/schedule_table/card', 'ScheduleController@addScheduleCard');
 Route::put('/schedule_table/card/{id}', 'ScheduleController@editScheduleCard');
 Route::delete('/schedule_table/card/{id}', 'ScheduleController@deleteScheduleCard');
 
+Route::get('/schedule_table/scheduledcard/{id}', 'ScheduleController@showScheduledCard');
+Route::post('/schedule_table/scheduledcard/add', 'ScheduleController@addScheduledCard');
+Route::post('/schedule_table/scheduledcard/{schedule_id}/{card_id}', 'ScheduleController@editScheduledCard');
+Route::delete('/schedule_table/scheduledcard/{schedule_id}/{card_id}', 'ScheduleController@deleteScheduledCard');
+
 Route::get('/ques', 'GameController@ques');
 Route::get('/spot/{answer}', 'GameController@spot');
 Route::get('/store_card', 'StoreController@showStoreCard');
