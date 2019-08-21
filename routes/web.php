@@ -42,3 +42,5 @@ Route::get('/spot/{answer}', 'GameController@spot');
 Route::get('/store_card', 'StoreController@showStoreCard');
 Route::post('/store_card', 'StoreController@addStoreCard');
 Route::delete('/store_card/{id}', 'StoreController@deleteStoreCard');
+
+Route::get('/example_game', 'ExampleController@showOptionSpots');
