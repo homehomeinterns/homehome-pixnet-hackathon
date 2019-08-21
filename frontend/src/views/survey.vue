@@ -1,4 +1,5 @@
 <template>
+<div>
 <div id="surveyContainer" class="container">
   <div class="survey-wrap">
     <div class="surveys">
@@ -52,7 +53,8 @@
 
             </div>
             <div class="modal-footer">
-              <button @click="close()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button @click="close()" type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button> -->
+              <h6>點擊景點可以看相關文章喔～</h6>
             </div>
           </div>
         </div>
@@ -60,6 +62,8 @@
       <!-- results -->
     </div>
   </div>
+</div>
+<img src="https://res.cloudinary.com/tzuhsin/image/upload/v1566396754/wave_h6ib2x.png">
 </div>
 </template>
 
