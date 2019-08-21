@@ -1,22 +1,19 @@
 <template>
 <div class="container">
-  <form onsubmit="return false;">
+
   <div :key="index" v-for="(question, index) in questions" class="row-survey">
     <div class="col-xs-12">
-      <br> Q{{ index+1 }} {{ question.question}}
+      <br> Q{{ index+1 }} {{ question.question }}
       <br>
       <div :key="choice" v-for="(choice, i) in question.answer" class="btn-group btn-group-vertical" data-toggle="buttons">
         <label class="btn">
-          <input type="radio" :name="index" :value="i" v-model="test.index" @change.native="insertAns()" required><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span> {{ choice }}</span>
-        {{ test.index }}
+          <input type="radio" v-model="test[index]" :name="index" :value="i" required><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span> {{ choice }}</span>
         </label>
       </div>
     </div>
   </div>
     <input type="submit" class="btn btn-info" value="Submit Button" @click="submitAnswer()">
-  </form>
-  
-<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+  <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -30,7 +27,7 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
 
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -90,13 +87,6 @@ export default {
       .catch(function (err) {
           console.log(err);
       })
-    },
-
-    insertAns () {
-      console.log('wtf')
-      $('input[type=radio]').change(function() {
-        console.log('jibai')
-    });
     },
 
     close () {
