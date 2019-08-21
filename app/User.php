@@ -29,14 +29,14 @@ class User extends Authenticatable
 
     public function schedules()
     {
-        return $this->hasMany(Schedule::class, 'id');
+        return $this->hasMany(Schedule::class, 'owner_id');
     }
-    public function schedule_cards()
+    public function cards()
     {
-        return $this->hasMany(Schedule_card::class, 'id');
+        return $this->hasMany(Card::class, 'owner_id');
     }
     public function stores()
     {
-        return $this->hasMany(Store::class, 'id');
+        return $this->hasMany(Store::class);
     }
 }

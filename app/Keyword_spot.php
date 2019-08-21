@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Option_keyword_mapping extends Model
+class Keyword_spot extends Model
 {
     protected $fillable = [
-	    'option_id', 'keyword_id'
+	    'keyword_id', 'spot_id'
     ];
 
+    protected $table = 'keyword_spot';
 }
