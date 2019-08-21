@@ -4,8 +4,11 @@
   <div class="survey-wrap">
     <div class="surveys">
 
+      <div id="loading" class="survey" v-if="this.questions==0">
+        <div class="spinner-border" role="status"></div>
+      </div>
       <div :key="index" v-for="(question, index) in questions" class="survey">
-        <div class="question">Q{{ index+1 }} {{ question.question}}</div>
+        <div class="question"><span>Q{{ index+1 }}</span> {{ question.question}}</div>
         <div class="option">
           <div :key="choice" v-for="(choice, i) in question.answer" class="container">
             <input type="radio" name='index' :id="choice" :value="i" v-model="test[index]" required>
@@ -26,13 +29,11 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Loading...</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">正在努力尋找最佳景點ヽ(✿ﾟ▽ﾟ)ノ</h5>
                 <span aria-hidden="true">&times;</span>
             </div>
             <div class="modal-body">
-              <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+              <div class="spinner-border" role="status"></div>
             </div>
           </div>
         </div>
@@ -43,7 +44,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">以下是測試的結果</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">以下是測試的結果<br>打包好行李準備出門玩吧ε٩(๑> ₃ <)۶з</h5>
               <button type="button" @click="close()" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>

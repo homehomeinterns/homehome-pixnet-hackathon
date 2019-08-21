@@ -39,6 +39,11 @@
     transition-duration: 0s;
 }
 
+#loading.survey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .survey {
     height: 100%;
     width: 100%;
@@ -49,6 +54,10 @@
     margin-top: 40px;
     text-align: left;
     height: 100px;
+    & span {
+        font-size: 24px;
+        margin-right: 5px;
+    }
 }
 .survey .option {
     text-align: left;
@@ -116,6 +125,8 @@
 }
 .modal-header {
     border-bottom: 0px;
+    margin: 0px 10px;
+    margin-top: 10px;
 }
 .modal-body {
     display: flex;
@@ -142,6 +153,7 @@
     justify-content: center;
     align-items: center;
     border-top: 0px;
+    padding-top: 0px;
     & h6 {
         font-weight: 400;
     }
