@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Schedule;
 use App\Card;
+use App\Card_schedule;
 
 class ScheduleController extends Controller
 {
@@ -173,4 +174,102 @@ class ScheduleController extends Controller
         return response()->json(['error' => true, 'message' => '擁有者才可以刪除！']);
     }
 
+    //pull and toll schedule card -> scheduled card
+    public function showScheduledCard($id)
+    {
+	$schedule = Schedule::findOrFail($id);
+	if (!$schedule) {
+		return response()->json(['error' => true, 'message' => '您未有行程規劃']);
+	}
+
+        try {
+            $schedule = Schedule::findOrFail($id);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json(['error' => true, 'message' => '該行程卡片不存在']);
+        }
+	
+	$scheduled_cards = Card_schedule::where('schedule_id', $id)->get();
+        return response()->json($scheduled_cards);
+    }
+
+    public function addScheduledCard(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'schedule_id' => 'required|max:10',
+            'card_id' => 'required|max:10',
+            'start_time' => 'required',
+            'end_time' => 'required',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+	}
+
+
+        $data = [
+            'schedule_id' => $request->input('schedule_id'),
+            'card_id' => $request->input('card_id'),
+            'start_time' => $request->input('start_time'),
+            'end_time' => $request->input('end_time'),
+        ];
+
+        $result = Card_schedule::create($data);
+        return response()->json(['error' => false, 'data' => $result]);
+    }
+
+    public function editScheduledCard(Request $request, $schedule_id, $card_id)
+    {
+	$validator = Validator::make($request->all(), [
+            'start_time' => 'required',
+            'end_time' => 'required',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json(['error' => true, 'message' => $validator->errors()]);
+        }
+
+
+	$card = count(Card_schedule::where('card_id', $card_id)->get());
+	$scheduled = count(Card_schedule::where('schedule_id', $schedule_id)->get());
+	
+	if (0 == $card) {
+            return response()->json(['error' => true, 'message' => '該卡片不存在']);
+	} elseif (0 == $scheduled) { 
+            return response()->json(['error' => true, 'message' => '該行程表不存在']);
+	}
+	
+
+	$schedule = Schedule::findOrfail($schedule_id);
+	$scheduled_card = Card_schedule::where('schedule_id', $schedule_id)->where('card_id', $card_id)->first();
+	
+	if ($schedule->owner_id == Auth::id()) {
+            $scheduled_card->start_time = $request->input('start_time');
+            $scheduled_card->end_time = $request->input('end_time');
+            $result = $scheduled_card->save();
+            return response()->json(['error' => $result, 'message' => '修改成功']);
+        }
+        return response()->json(['error' => true, 'message' => '擁有者才可以修改！']);
+    }
+
+    public function deleteScheduledCard($schedule_id, $card_id)
+    {
+	$card = count(Card_schedule::where('card_id', $card_id)->get());
+	$scheduled = count(Card_schedule::where('schedule_id', $schedule_id)->get());
+	
+	if (0 == $card) {
+            return response()->json(['error' => true, 'message' => '該卡片不存在']);
+	} elseif (0 == $scheduled) { 
+            return response()->json(['error' => true, 'message' => '該行程表不存在']);
+	}
+	
+	
+	$scheduled_card = Card_schedule::where('schedule_id', $schedule_id)->where('card_id', $card_id)->first();
+
+	$schedule = Schedule::findOrfail($schedule_id);
+        if ($schedule->owner_id == Auth::id()) {
+            $result = $scheduled_card->delete();
+            return response()->json(['error' => $result, 'message' => '刪除成功']);
+        }
+        return response()->json(['error' => true, 'message' => '擁有者才可以刪除！']);
+    }
 }
