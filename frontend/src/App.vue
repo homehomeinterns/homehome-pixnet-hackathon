@@ -18,13 +18,53 @@
   </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    navbar () {
+      window.addEventListener('scroll', function() {
+        let navbar = document.querySelector('.navbar');
+        if (window.scrollY > 0) {
+          navbar.classList.add('bg-light');
+        } else {
+          navbar.classList.remove('bg-light');
+        }
+      });
+    }
+  },
+  mounted () {
+    this.navbar();
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+  nav.navbar.fixed-top.navbar-light.navbar-expand i {
+    color: #fc5185;
+  }
+  nav.navbar.fixed-top.navbar-light.navbar-expand span {
+    color: #fc5185;
+    font-family: "Varela Round";
+    margin-left: 5px;
+  }
+  nav.navbar.fixed-top.navbar-light.navbar-expand a {
+    color: #364f6b;
+    letter-spacing: 1px;
+  }
+  nav.navbar.fixed-top.navbar-light.navbar-expand a #line {
+    width: 0px;
+    height: 2px;
+    background: #5bd6c8;
+  }
+  nav.navbar.fixed-top.navbar-light.navbar-expand a:hover #line {
+    width: 100%;
+    height: 2px;
+    background-color: #5bd6c8;
+  }
 </style>
