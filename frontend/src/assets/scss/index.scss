@@ -9,7 +9,7 @@
 
 header.jumbotron {
   text-align: left;
-  background-image: url(https://cdn.pixabay.com/photo/2019/04/19/09/46/holiday-4138980_1280.png);
+  background-image: url(https://res.cloudinary.com/tzuhsin/image/upload/v1566394662/beach_qheo2v.png);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -123,7 +123,8 @@ section#section_test .col-sm-12.col-md-5 {
   background-image: url(https://cdn.pixabay.com/photo/2017/06/08/17/52/compass-2384365_1280.png);
   background-repeat: no-repeat;
   height: 400px;
-  background-size: 100% auto;
+  background-size: contain;
+  background-position: center center;
 }
 section#section_test .col-sm-12.col-md-7 {
   text-align: center;
