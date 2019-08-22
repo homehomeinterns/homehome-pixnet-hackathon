@@ -63,6 +63,7 @@
 }
 .survey .container {
     margin-bottom: 20px;
+    padding: 0px 15px;
 }
 .survey input[type="radio"] {
     display: none;
@@ -157,11 +158,17 @@
     }
 }
 
-img {
+.bgImage {
     position: fixed;
     bottom: 0;
     z-index: 0;
 }
+.bgImage {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
 .row {
     margin: 0px;
 }
@@ -189,5 +196,8 @@ img {
     }
     .modal-header h5 {
         font-size: 16px;
+    }
+    .modal-body a {
+        font-size: 24px;
     }
 }
