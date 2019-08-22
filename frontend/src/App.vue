@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <nav class="navbar fixed-top navbar-light navbar-expand"><router-link to="/" class="navbar-brand" href="#top"><i class="fas fa-umbrella-beach"></i><span>Homeinterns</span></router-link>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-sm-auto">
-        <li class="nav-item px-2"><router-link to="./recomend" class="nav-link" href="#section_recommand">推薦頁面
+    <input type="checkbox" id="menu_control">
+    <nav class="navbar fixed-top navbar-light">
+      <router-link to="/" class="navbar-brand" href="#top"><i class="fas fa-umbrella-beach"></i><span>Homeinterns</span></router-link>
+      <label for="menu_control" class="menu_btn"><i class="fas fa-bars"></i></label>
+      <ul id="navbarNav">
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./recomend" class="nav-link" href="#section_recommand">推薦頁面
             <div id="line"></div></router-link></li>
-        <li class="nav-item px-2"><router-link to="./construction" class="nav-link" href="#section_article">文章頁面
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./construction" class="nav-link" href="#section_article">文章頁面
             <div id="line"> </div></router-link></li>
-        <li class="nav-item px-2"><router-link to="./construction" class="nav-link" href="#section_test">書籤頁
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./construction" class="nav-link" href="#section_test">書籤頁面
             <div id="line"></div></router-link></li>
-        <li class="nav-item px-2"><router-link to="./survey" class="nav-link">旅遊測驗
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./survey" class="nav-link">旅遊測驗
             <div id="line"></div></router-link></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
     <router-view/>
   </div>
 </template>
@@ -30,6 +31,9 @@ export default {
           navbar.classList.remove('bg-light');
         }
       });
+    },
+    toggle () {
+      document.querySelector("#menu_control").checked = false;
     }
   },
   mounted () {
@@ -41,6 +45,7 @@ export default {
 <style>
 html {
   height: 100%;
+  width: 100%;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -48,26 +53,93 @@ html {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-  nav.navbar.fixed-top.navbar-light.navbar-expand i {
-    color: #fc5185;
+#menu_control {
+  display: none;
+}
+#menu_control:checked ~ nav {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#menu_control:checked ~ nav #navbarNav {
+  height: 160px;
+  margin: 10px 0px;
+}
+.menu_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 0px;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #fc5185;
+  float: right;
+  cursor: pointer;
+}
+#navbarNav {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+}
+.nav-item {
+  display: flex;
+  justify-content: center;
+}
+nav.navbar-expend {
+  justify-content:space-between;
+}
+nav.navbar.fixed-top.navbar-light i {
+  color: #fc5185;
+}
+nav.navbar.fixed-top.navbar-light span {
+  display: inline;
+  color: #fc5185;
+  font-family: "Varela Round";
+  margin-left: 5px;
+}
+nav.navbar.fixed-top.navbar-light a {
+  color: #364f6b;
+  letter-spacing: 2px;
+  padding: 8px;
+}
+nav.navbar.fixed-top.navbar-light a #line {
+  width: 0px;
+  height: 2px;
+  background: #5bd6c8;
+  position: relative;
+  top: -50%;
+  left: 100%;
+}
+nav.navbar.fixed-top.navbar-light a:hover #line {
+  width: 50px;
+  height: 2px;
+  background-color: #5bd6c8;
+}
+@media screen and (min-width: 660px) {
+  .menu_btn {
+    display: none;
   }
-  nav.navbar.fixed-top.navbar-light.navbar-expand span {
-    color: #fc5185;
-    font-family: "Varela Round";
-    margin-left: 5px;
+  nav {
+    background-color: transparent;
   }
-  nav.navbar.fixed-top.navbar-light.navbar-expand a {
-    color: #364f6b;
-    letter-spacing: 1px;
+  #navbarNav {
+    overflow: visible;
+    height: auto;
+    width: auto;
+    flex-direction: row;
   }
-  nav.navbar.fixed-top.navbar-light.navbar-expand a #line {
-    width: 0px;
-    height: 2px;
-    background: #5bd6c8;
+  nav.navbar.fixed-top.navbar-light a #line {
+    top: 0px;
+    left: 0px;
   }
-  nav.navbar.fixed-top.navbar-light.navbar-expand a:hover #line {
+  nav.navbar.fixed-top.navbar-light a:hover #line {
     width: 100%;
-    height: 2px;
-    background-color: #5bd6c8;
   }
+}
 </style>

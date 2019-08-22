@@ -139,7 +139,6 @@ export default {
         document.querySelector(".surveys").style.top = "-"+this.page*100+"%";
       } else if (this.page === 8){
         document.querySelector(".surveys").style.top = "-"+this.page*100+"%";
-        document.querySelector(".next").style.display = "none";
       }
       this.page+=1;
     },

@@ -9,6 +9,11 @@
 6. php artisan serve 執行本地 server 就可以進歡迎頁 (http://127.0.0.1:8000)
 7. 如果要修改前端的東西, 要開兩個 terminal, 一個執行 npm run watch, 另一個執行 php artisan serve
 
+### 前端初始化
+1. cd frontend
+2. yarn install
+3. 本機開發 yarn serve, GCE 上 yarn build
+
 ### 遇到的問題紀錄
 - 如果出現 `The only supported ciphers are AES-128-CBC and AES-256-CBC` 的錯誤訊息
     - 執行 php artisan config:clear 即可
