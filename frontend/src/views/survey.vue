@@ -1,6 +1,5 @@
 <template>
-<div>
-<div id="surveyContainer" class="container">
+<div id="surveyContainer">
   <div class="survey-wrap">
     <div class="surveys">
 
@@ -44,7 +43,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">以下是測試的結果<br>打包好行李準備出門玩吧ε٩(๑> ₃ <)۶з</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">以下是測試的結果<br>打包好行李準備出門玩吧<br>ε٩(๑> ₃ <)۶з</h5>
               <button type="button" @click="close()" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -63,8 +62,7 @@
       <!-- results -->
     </div>
   </div>
-</div>
-<img src="https://res.cloudinary.com/tzuhsin/image/upload/v1566400988/wave_r05oq4.png">
+  <img src="https://res.cloudinary.com/tzuhsin/image/upload/v1566400988/wave_r05oq4.png">
 </div>
 </template>
 
