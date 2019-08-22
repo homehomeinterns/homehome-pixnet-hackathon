@@ -62,7 +62,7 @@
       <!-- results -->
     </div>
   </div>
-  <img src="https://res.cloudinary.com/tzuhsin/image/upload/v1566400988/wave_r05oq4.png">
+  <img src="https://res.cloudinary.com/tzuhsin/image/upload/v1566400988/wave_r05oq4.png" class="bgImage">
 </div>
 </template>
 

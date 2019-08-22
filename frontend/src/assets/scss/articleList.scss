@@ -2,8 +2,8 @@
     // border: 1px solid #ccc;
     position: relative;
 }
-.container {
-    padding: 10px;
+.containerBox {
+    padding: 20px;
 }
 .block {
     display: inline-block;
@@ -12,11 +12,11 @@
     border-radius: 10px;
     overflow: hidden;
     &:hover {
-        img {
+        .articleImg {
             filter: opacity(50%);
         }
     }
-    & img {
+    & .articleImg {
         width: 100%;
         height: auto;
         filter: blur(5px);
