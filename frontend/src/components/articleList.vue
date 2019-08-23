@@ -2,7 +2,9 @@
   <div class="containerBox col-md-6 col-lg-3">
     <a class="block" :href="article.link" target="_blank">
       <img :src="article.thumb" class="articleImg">
-      <h6>{{ article.title }}</h6>
+      <div class="title">
+        <h6>{{ article.title }}</h6>
+      </div>
     </a>
   </div>
 </template>
