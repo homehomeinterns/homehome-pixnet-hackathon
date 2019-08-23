@@ -1,5 +1,8 @@
 <template>
 <div id="surveyContainer">
+  <div class="progress surveyProgress">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
   <div class="survey-wrap">
     <div class="surveys">
 
@@ -108,6 +111,7 @@ export default {
       document.getElementById('exampleModalCenter').style.display='none';
     },
     submitAnswer () {
+      document.querySelector(".surveyProgress").style.display = 'none';
       document.getElementById('loading').style.display='block';
       document.getElementById('loading').style.opacity='1';
       var diu = Object.values(this.test)
@@ -133,10 +137,9 @@ export default {
       })
     },
     next () {
-      if (this.page<8) {
+      if (this.page<9) {
         document.querySelector(".surveys").style.top = "-"+this.page*100+"%";
-      } else if (this.page === 8){
-        document.querySelector(".surveys").style.top = "-"+this.page*100+"%";
+        document.querySelector(".progress-bar").style.width = this.page*12.5+"%"
       }
       this.page+=1;
     },
