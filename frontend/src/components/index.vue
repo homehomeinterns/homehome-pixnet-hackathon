@@ -2,7 +2,7 @@
 <div>
   <header class="jumbotron" id="top">
     <div class="container">
-      <h1>Pixnet Hackthon</h1>
+      <h1>Pixnet Hackathon</h1>
       <div class="line"></div>
       <h5>顛覆你的旅遊體驗</h5>
     </div>
