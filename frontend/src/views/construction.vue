@@ -8,15 +8,6 @@
 import axios from 'axios';
 export default {
   name: 'construction',
-  data (){
-    return{
-    }
-  },
-  mounted() {
-      this.question();
-  },
-  methods: {
-  }
 }
 </script>
 

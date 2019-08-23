@@ -7,19 +7,7 @@
       <h5>顛覆你的旅遊體驗</h5>
     </div>
   </header>
-  <section id="section_recommand">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-sm-5 img"></div>
-        <div class="col-sm-7">
-          <h2>推薦頁面</h2>
-          <h5>瀏覽推薦行程、流行趨勢</h5>
-          <h5>分享行程、旅遊社群</h5>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="section_article">
+  <section id="section_recomend">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
@@ -27,26 +15,48 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="img_wrap" id="food">
-            <h4>美食</h4>
+            <router-link to="./recomend" id="link">
+              <h4>美食</h4>
+            </router-link>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="img_wrap" id="hotel">
-            <h4>住宿</h4>
+            <router-link to="./recomend" id="link">
+              <h4>住宿</h4>
+            </router-link>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="img_wrap" id="spot">
-            <h4>景點</h4>
+            <router-link to="./recomend" id="link">
+              <h4>景點</h4>
+            </router-link>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="img_wrap" id="store">
-            <h4>書籤與收藏</h4>
+            <router-link to="./construction" id="link">
+              <h4>書籤與收藏</h4>
+            </router-link>
           </div>
         </div>
       </div>
     </div>
+  </section>
+  <section id="section_route">
+    <router-link to="./construction" id="link">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-sm-5 img"></div>
+          <div class="col-sm-7">
+            <h2>安排你的旅程</h2>
+            <h5>瀏覽推薦行程、流行趨勢</h5>
+            <h5>分享行程、旅遊社群</h5>
+          </div>
+        </div>
+      </div>
+    </router-link>
   </section>
   <section id="section_test">
     <div class="container-fliud">
@@ -67,7 +77,7 @@
                 <h5>美食行程</h5>
               </div>
             </div>
-            <button class="btn btn-default">馬上測一測</button>
+            <router-link to="./survey"><button class="btn btn-default">馬上測一測</button></router-link>
           </div>
         </div>
       </div>
@@ -79,16 +89,18 @@
         <div class="col-sm-12">
           <h2>將喜愛的行程加入收藏吧</h2>
         </div>
-        <div class="col-sm-12">
-          <div class="sec1"><i class="fas fa-heart"></i>
-            <h3>收藏的景點</h3>
-            <p>內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容。</p>
+        <router-link to="./construction" id="link">
+          <div class="col-sm-12">
+            <div class="sec1"><i class="fas fa-heart"></i>
+              <h3>收藏的景點</h3>
+              <p>已加入收藏的景點能排入行程，快來試試安排近期的旅遊計畫吧！</p>
+            </div>
+            <div class="sec2"><i class="fas fa-bookmark"></i>
+              <h3>加入書籤</h3>
+              <p>你能夠隨時觀看已加入書籤的文章，讓你不會錯過任何旅遊資訊！</p>
+            </div>
           </div>
-          <div class="sec2"><i class="fas fa-bookmark"></i>
-            <h3>加入書籤</h3>
-            <p>內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容內容。</p>
-          </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>

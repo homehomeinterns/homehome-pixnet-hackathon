@@ -2,15 +2,15 @@
   <div id="app">
     <input type="checkbox" id="menu_control">
     <nav class="navbar fixed-top navbar-light">
-      <router-link to="/" class="navbar-brand" href="#top"><i class="fas fa-umbrella-beach"></i><span>Homeinterns</span></router-link>
+      <div class="index" @click="toggle()"><router-link to="/" class="navbar-brand" href="#top"><i class="fas fa-umbrella-beach"></i><span>Homeinterns</span></router-link></div>
       <label for="menu_control" class="menu_btn"><i class="fas fa-bars"></i></label>
       <ul id="navbarNav">
-        <li class="nav-item px-2" @click="toggle()"><router-link to="./recomend" class="nav-link" href="#section_recommand">推薦頁面
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./recomend" class="nav-link" href="#section_recommand">推薦文章
             <div id="line"></div></router-link></li>
-        <li class="nav-item px-2" @click="toggle()"><router-link to="./construction" class="nav-link" href="#section_article">文章頁面
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./construction" class="nav-link" href="#section_test">書籤收藏
+            <div id="line"></div></router-link></li>
+        <li class="nav-item px-2" @click="toggle()"><router-link to="./construction" class="nav-link" href="#section_article">安排行程
             <div id="line"> </div></router-link></li>
-        <li class="nav-item px-2" @click="toggle()"><router-link to="./construction" class="nav-link" href="#section_test">書籤頁面
-            <div id="line"></div></router-link></li>
         <li class="nav-item px-2" @click="toggle()"><router-link to="./survey" class="nav-link">旅遊測驗
             <div id="line"></div></router-link></li>
       </ul>
